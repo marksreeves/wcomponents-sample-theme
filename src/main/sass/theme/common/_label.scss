@@ -1,0 +1,35 @@
+
+// styles for WLabel and the label emulators
+
+.wc-label,
+legend {
+  > .fa-asterisk {
+    color: $wc-clr-violet;
+    font-size: .5em;
+    font-weight: normal;
+    line-height: 1;
+    vertical-align: top;
+  }
+}
+
+
+// WLabel produces many things which are not label elements, so we have to use
+// the class here.
+.wc-label {
+  font-weight: bold;
+
+  .wc-checkbox + &,
+  .wc-radiobutton + &,
+  .wc-checkbox & {
+    font-weight: normal;
+  }
+}
+
+// hint is additional text for labels that describe other information for the
+// related form element
+.wc-label-hint {
+  color: $wc-clr-violet;
+
+  font-size: 82.5%;
+  font-weight: normal;
+}

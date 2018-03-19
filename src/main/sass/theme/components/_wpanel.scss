@@ -1,0 +1,72 @@
+// #############################################################################
+// WPanel type CHROME
+// See wc.section.color
+// #############################################################################
+.wc-panel-type-chrome > h1 {
+  background-color: $wc-clr-dark-blue;
+  color: $wc-clr-white;
+}
+
+// #############################################################################
+// Type.ACTION
+// #############################################################################
+// See wc.section.color
+.wc-panel-type-action {
+  background-color: $wc-clr-white;
+  border-color: $wc-clr-violet;
+
+  > h1 {
+    background-color: $wc-clr-violet;
+    color: $wc-clr-white;
+  }
+}
+
+// #############################################################################
+// WPanel Type.FEATURE
+// #############################################################################
+// 'The feature panel is highlighted by a background colour and border.'
+
+
+.wc-panel-type-feature {
+  background-color: $wc-clr-light-grey;
+  border-color: $wc-clr-grey;
+  color: $wc-clr-dark-blue;
+  padding: $wc-gap-normal;
+}
+
+// #############################################################################
+// Type FOOTER
+// #############################################################################
+footer {
+  background-color: $wc-clr-light-grey;
+  color: $wc-clr-dark-blue;
+  padding: $wc-gap-normal;
+}
+
+
+// #############################################################################
+// Type HEADER
+// #############################################################################
+[role='banner'] {
+  background-color: $wc-clr-dark-blue;
+  padding: $wc-gap-normal;
+
+  // Set the foreground colour of components which have their own defined
+  // colour so will not inherit from the container.
+  &,
+  h1,
+  .wc-linkbutton,
+  a,
+  a:visited {
+    color: $wc-clr-white;
+  }
+}
+
+
+// #############################################################################
+// ListLayout
+// #############################################################################
+.wc-listlayout-type-striped > :nth-child(even) {
+  background-color: $wc-clr-light-grey;
+  color: $wc-clr-black;
+}

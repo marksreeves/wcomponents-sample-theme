@@ -1,0 +1,58 @@
+.wc_msgbox {
+  @include border($color: $wc-clr-red);
+  @include flex;
+
+
+  &.wc-timeoutwarning > h1 > span:first-child {
+    max-height: none;
+    max-width: none;
+    overflow: visible;
+    position: static;
+  }
+
+  > div {
+    @include flex-align-self(center);
+
+    > div + div {
+      margin-top: $wc-gap-normal;
+    }
+  }
+
+  > h1 {
+    background-color: $wc-clr-red; // default error box
+    color: $wc-clr-white;
+
+    > span {
+      left: -9999px;
+      max-height: 1rem;
+      max-width: 1rem;
+      overflow: hidden;
+      position: absolute;
+    }
+  }
+}
+
+// message types - there can only be one type per box
+.wc-messagebox-type-warn {
+  border-color: $wc-clr-orange;
+
+  > h1 {
+    background-color: $wc-clr-orange;
+  }
+}
+
+.wc-messagebox-type-info {
+  border-color: $wc-clr-dark-blue;
+
+  > h1 {
+    background-color: $wc-clr-dark-blue;
+  }
+}
+
+.wc-messagebox-type-success {
+  border-color: $wc-clr-green;
+
+  > h1 {
+    background-color: $wc-clr-green;
+  }
+}

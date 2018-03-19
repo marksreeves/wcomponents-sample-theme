@@ -1,0 +1,95 @@
+table {
+  @include border;
+}
+
+// thead
+thead {
+  background-color: $wc-clr-dark-blue;
+
+  &,
+  .wc-nobutton,
+  .wc-linkbutton,
+  a,
+  a:visited {
+    color: $wc-clr-white;
+  }
+
+  .wc-submenu .wc-menuitem {
+    color: $wc-clr-black;
+  }
+}
+
+[sorted] {
+  // the TH needs to be opague to over-ride the thead background color
+  // rather than over-lay it.
+  background-color: $wc-clr-light-grey;
+
+  &,
+  .wc-nobutton,
+  .wc-linkbutton,
+  a,
+  a:visited {
+    color: $wc-clr-black;
+  }
+
+  .wc-linkbutton[disabled],
+  .wc-nobutton[disabled],
+  [aria-disabled='true'] {
+    color: $wc-clr-dark-grey;
+  }
+}
+
+// #############################################################################
+// Separators
+// #############################################################################
+.wc_table_rowsep > tr + tr {
+  @include border($pos: top);
+}
+
+.wc_table_colsep {
+  > col + col {
+    @include border($pos: left);
+  }
+
+  // The first col after the last auto generated col is the first data col and
+  // cannot have a left border
+  > .wc_table_colauto {
+    @include border($pos: left, $width: 0);
+  }
+}
+
+// #############################################################################
+// Sort
+// #############################################################################
+// Sorted column
+.wc_table_sort_sorted {
+  background-color: $wc-clr-light-grey-rgba;
+}
+
+// #############################################################################
+// Stripong
+// #############################################################################
+// Column Striping.
+// Row striping: You'd think tr:nth-child(even) would be enough but that does
+// not account for sub rows.
+.wc_table_stripe {
+  background-color: $wc-clr-light-grey-rgba;
+}
+
+// #############################################################################
+// Row selection
+// #############################################################################
+// this only applies to rows with the invite class.
+// sass-lint:disable no-qualifying-elements
+tr.wc-invite {
+  &:hover,
+  &:focus {
+    background-color: $wc-clr-light-blue-rbga;
+  }
+}
+// sass-lint:enable no-qualifying-elements
+
+// the is the submenu opener emulator for the sub-row toggle control
+.wc_table_sel_wrapper .wc-submenu-o {
+  background-color: $wc-clr-light-grey;
+}

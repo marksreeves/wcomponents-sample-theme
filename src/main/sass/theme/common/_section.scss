@@ -1,0 +1,39 @@
+
+$wc-section-header-size: 1em !default;
+
+section {
+  @include border($color: $wc-clr-dark-blue);
+
+  > h1,
+  > header h1 {
+    font-size: $wc-section-header-size;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  > h1,
+  > header {
+    padding: $wc-gap-normal;
+  }
+
+  > header {
+    background-color: $wc-clr-dark-blue;
+    color: $wc-clr-white;
+
+    h1,
+    // color links, link-like buttons and 'buttonless' buttons to make them
+    // visible.
+    .wc-nobutton,
+    .wc-linkbutton,
+    a,
+    a:visited {
+      color: $wc-clr-white;
+    }
+
+    .wc-nobutton[disabled],
+    .wc-linkbutton[disabled],
+    [aria-disabled='true'] {
+      color: $wc-clr-disabled;
+    }
+  }
+}

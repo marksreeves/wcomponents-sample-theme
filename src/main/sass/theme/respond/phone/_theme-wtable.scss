@@ -1,0 +1,24 @@
+
+.wc-table.wc-respond {
+  // sass-lint:disable no-qualifying-elements
+  tr[aria-selected='true'] {
+    &,
+    &.wc-invite:hover,
+    &.wc-invite:focus {
+      background-color: $wc-clr-dark-grey;
+    }
+
+    > th,
+    > td {
+      // WARNING: you _may_ want to add overrides for coloured
+      // elements eg, headings.
+      &,
+      a,
+      a:visited,
+      .wc-linkbutton {
+        color: $wc-clr-light-grey;
+      }
+    }
+  }
+  // sass-lint:enable no-qualifying-elements
+}

@@ -1,0 +1,13 @@
+// WStyledText - not WText.
+// In this default style only WStyledText.Type.MANDATORY_INDICATOR is styled.
+
+// This Type of WStyledText allows something other than a WLabel/WFieldSet
+// legend to show a mandatory field indicator. Why? To present a "key" if
+// required or to mark a table column header as containing fields which must
+// be completed. Not terribly good use-cases but use-cases non-the-less.
+.wc-text-type-mandatoryIndicator::after {
+  color: $wc-clr-violet;
+  font-size: .5em;
+  line-height: 1;
+  vertical-align: top;
+}

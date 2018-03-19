@@ -1,0 +1,37 @@
+// Style of a WComponents application theme. Used to set colours, type etc.
+// This file must exist even if it is empty.
+
+@import 'theme/mixins/invite';
+@import 'theme/mixins/outline';
+
+@import 'theme/common/back-to-top';
+@import 'theme/common/buttons';
+@import 'theme/common/combo';
+@import 'theme/common/common';
+@import 'theme/common/image-edit';
+@import 'theme/common/label';
+@import 'theme/common/loading';
+@import 'theme/common/section';
+@import 'theme/common/tooltip';
+
+@import 'theme/components/wcollapsible';
+@import 'theme/components/wcollapsibletoggle';
+@import 'theme/components/wdatefield';
+@import 'theme/components/wdefinitionlist';
+@import 'theme/components/wdialog';
+@import 'theme/components/wfieldindicator';
+@import 'theme/components/wheading';
+@import 'theme/components/whr';
+@import 'theme/components/wmenu';
+@import 'theme/components/wmessagebox';
+@import 'theme/components/wmultifileupload';
+@import 'theme/components/wpanel';
+@import 'theme/components/wselect';
+@import 'theme/components/wskiplinks';
+@import 'theme/components/wstyledtext';
+@import 'theme/components/wtable';
+@import 'theme/components/wtabset';
+@import 'theme/components/wtextarea';
+@import 'theme/components/wtimeoutwarning';
+@import 'theme/components/wtogglebutton';
+@import 'theme/components/wtree';

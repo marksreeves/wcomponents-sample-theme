@@ -1,0 +1,9 @@
+
+// typeahead indicator
+.wc_selsch {
+  background-color: $wc-clr-light-grey;
+
+  &.wc_selsch_notfound {
+    color: $wc-clr-red;
+  }
+}

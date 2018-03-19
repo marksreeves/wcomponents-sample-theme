@@ -1,0 +1,21 @@
+[role='tab'] {
+  background-color: $wc-clr-light-grey;
+  border-color: $wc-clr-grey;
+  color: $wc-clr-black;
+
+  &[aria-selected='true'],
+  &[aria-expanded='true'] {
+    background-color: $wc-clr-white;
+  }
+}
+
+[role='tabpanel'] {
+  @include border;
+  background-color: $wc-clr-white;
+  color: $wc-clr-black;
+
+  [aria-multiselectable] > & {
+    border-bottom: 0;
+    border-top: 0;
+  }
+}

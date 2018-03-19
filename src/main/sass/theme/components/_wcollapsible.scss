@@ -1,0 +1,17 @@
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+
+  > h1,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6 {
+    color: $wc-clr-black;
+    font-size: inherit;
+    font-weight: bold;
+    vertical-align: text-top;
+  }
+}

@@ -1,0 +1,16 @@
+
+.wc_menu_bar.wc_menu_fix {
+  background-color: transparent;
+
+  [role='banner'] & {
+    > .wc-submenu > button {
+      color: $wc-clr-white;
+    }
+  }
+
+  section > header  & {
+    > .wc-submenu > button {
+      color: $wc-clr-white;
+    }
+  }
+}

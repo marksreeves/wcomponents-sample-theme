@@ -1,0 +1,31 @@
+.wc-multifileupload.wc_dragging [type='file'] {
+  @include wc-outline($color: $wc-clr-black, $style: dotted, $width: 2px);
+  background-color: $wc-clr-light-blue;
+}
+
+.wc-file {
+  background-color: $wc-clr-light-grey;
+}
+
+// sass-lint:disable no-vendor-prefixes
+[type='file'] {
+  // background-color: transparent;
+
+  // pseudo-element ::-ms-browse on its own has detrimental effects on all
+  // buttons if it is not explicitly nested in a [type='file'] so leave
+  // these nested selectors.
+  &::-ms-browse {
+    border: 0;
+  }
+
+  &::-ms-value {
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+  }
+
+  &[disabled] {
+    background-color: $wc-clr-disabled-bg;
+  }
+}
+// sass-lint:enable no-vendor-prefixes

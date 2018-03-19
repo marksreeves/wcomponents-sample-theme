@@ -1,0 +1,20 @@
+.wc-menu-type-bar,
+.wc-menu-type-column {
+  background-color: $wc-clr-light-grey;
+  color: $wc-clr-black;
+}
+
+.wc_menu_bar,
+.wc-menu-type-column {
+  .wc_submenucontent {
+    @include border;
+    background-color: $wc-clr-light-grey;
+    color: $wc-clr-black;
+  }
+}
+
+// selected elements
+.wc-menuitem[aria-checked='true'] {
+  background-color: $wc-clr-dark-grey;
+  color: $wc-clr-light-grey;
+}

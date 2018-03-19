@@ -1,0 +1,25 @@
+
+// a button stlyed to not have any default button appearance.
+
+
+// A common class for buttons which only contain icons.
+.wc_btn_icon {
+  @include wc-invite;
+  @include border;
+  background-color: transparent;
+  color: inherit;
+
+  &[disabled] {
+    border-color: $wc-clr-disabled-border;
+    color: $wc-clr-disabled-fg;
+  }
+}
+
+// a button which is disguides as  a link!
+.wc-linkbutton {
+  color: $wc-clr-dark-blue;
+
+  &[disabled] {
+    color: $wc-clr-disabled-fg;
+  }
+}

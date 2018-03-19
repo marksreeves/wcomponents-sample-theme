@@ -1,0 +1,37 @@
+// loading indicator is generated and identified
+// sass-lint:disable no-ids
+#wc-ui-loading {
+  > div {
+    &::before {
+      font-size: 2rem;
+    }
+  }
+}
+// sass-lint:enable no-ids
+
+@mixin wc-busy-fade {
+  opacity: .25;
+  transition-delay: 0s;
+  transition-duration: .5s;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+
+// aria-busy areas
+[aria-busy='true'] {
+  color: $wc-clr-grey-rgba;
+
+  > * {
+    @include wc-busy-fade;
+  }
+
+  &::before { // yeah - I know this won't work for replaced content...
+    color: $wc-clr-dark-grey;
+  }
+}
+
+// sass-lint:disable no-qualifying-elements
+img[aria-busy='true'] {
+  @include wc-busy-fade;
+}
+// sass-lint:enable no-qualifying-elements

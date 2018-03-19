@@ -1,0 +1,24 @@
+dialog {
+  background: transparent;
+
+  > div { // dialog content container
+    background-color: $wc-clr-white;
+    border-color: $wc-clr-grey;
+  }
+
+  > header,
+  > footer { // top and bottom bars of dialog
+    background-color: $wc-clr-dark-blue;
+    color: $wc-clr-white;
+  }
+
+  > header {
+    > h1 { // the title
+      color: $wc-clr-white;
+    }
+
+    button {
+      @include border($color: $wc-clr-white);
+    }
+  }
+}

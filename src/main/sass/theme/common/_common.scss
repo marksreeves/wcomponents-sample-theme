@@ -1,0 +1,98 @@
+
+// Common components - form elements, basic element selectors, elements which
+// are shared by many WComponents.
+body {
+  background-color: $wc-clr-white;
+  color: $wc-clr-black;
+}
+
+
+p {
+  margin: 0 0 $wc-gap-large;
+}
+
+fieldset {
+  border-color: $wc-clr-grey;
+}
+
+input,
+select,
+textarea {
+  &[aria-invalid='true'] {
+    background-color: $wc-clr-pink;
+  }
+
+  &[disabled] {
+    background-color: $wc-clr-disabled-bg;
+    border-color: $wc-disabled-border;
+    color: $wc-clr-disabled-fg;
+  }
+}
+
+
+// NOTE: backwards compatibility with WC 1.4 - not really needed.
+legend {
+  font-weight: bold;
+}
+
+// #############################################################################
+// LINKS (`a` element not `link` element)
+// The order of these matters even though it looks wrong. By defining :visited
+// before a we do not have to do a double override of the disabled state.
+// Disabled links. Gotta love the monkey who came up with that one.
+// #############################################################################
+:visited {
+  color: $wc-clr-violet;
+}
+
+a {
+  color: $wc-clr-dark-blue;
+}
+
+// wc-invite is a common class for indicating a control which has an
+// "invitation" on hover/focus.
+.wc-invite {
+  @include wc-invite;
+}
+
+// Mark an error state. This is a secondary indicator of an error state separate
+// from the aria-invalid state. It is used when the maxlength is exceeded in a
+// textarea or when a label (or equivalent) is not provided. This has to be
+// present but the actual style does not matter a lot. Eventually we should be
+// able to remove the missing label warnings and move this to textarea only.
+.wc-err {
+  color: $wc-clr-red;
+}
+
+// The modal shim is a single generated artefact with a constant id.
+// sass-lint:disable no-ids
+#wc-shim {
+  background-color: $wc-clr-dark-grey-rgba;
+  color: $wc-clr-black;
+}
+// sass-lint:enable no-ids
+
+// invalid
+[aria-invalid='true'] {
+  @include wc-outline($color: $wc-clr-red);
+}
+
+// These are colour classes. Colour classes are _very_ dangerous. Therefore we
+// do not supply any which act on actual elements. These colours will,
+// therefore, only act on the pseudo element used to generate an icon. Extend
+// these as you feel fit.
+.wc-cerror::before {
+  color: $wc-clr-red;
+}
+
+.wc-cwarning::before {
+  color: $wc-clr-orange;
+}
+
+.wc-cinfo::before {
+  color: $wc-clr-dark-blue;
+}
+
+.wc-csuccess::before {
+  color: $wc-clr-green;
+}
