@@ -2,29 +2,28 @@
 // Common components - form elements, basic element selectors, elements which
 // are shared by many WComponents.
 body {
-  background-color: $wc-clr-white;
-  color: $wc-clr-black;
+  background-color: $sample-clr-white;
+  color: $sample-clr-black;
 }
-
 
 p {
   margin: 0 0 $wc-gap-large;
 }
 
 fieldset {
-  border-color: $wc-clr-grey;
+  border-color: $sample-clr-grey;
 }
 
 input,
 select,
 textarea {
   &[aria-invalid='true'] {
-    background-color: $wc-clr-pink;
+    background-color: $sample-clr-pink;
   }
 
   &[disabled] {
     background-color: $wc-clr-disabled-bg;
-    border-color: $wc-disabled-border;
+    border-color: $wc-clr-disabled-border;
     color: $wc-clr-disabled-fg;
   }
 }
@@ -42,11 +41,11 @@ legend {
 // Disabled links. Gotta love the monkey who came up with that one.
 // #############################################################################
 :visited {
-  color: $wc-clr-violet;
+  color: $sample-clr-violet;
 }
 
 a {
-  color: $wc-clr-dark-blue;
+  color: $sample-clr-dark-blue;
 }
 
 // wc-invite is a common class for indicating a control which has an
@@ -61,38 +60,46 @@ a {
 // present but the actual style does not matter a lot. Eventually we should be
 // able to remove the missing label warnings and move this to textarea only.
 .wc-err {
-  color: $wc-clr-red;
+  color: $sample-clr-red;
 }
 
 // The modal shim is a single generated artefact with a constant id.
 // sass-lint:disable no-ids
 #wc-shim {
-  background-color: $wc-clr-dark-grey-rgba;
-  color: $wc-clr-black;
+  background-color: $sample-clr-dark-grey-rgba;
+  color: $sample-clr-black;
 }
 // sass-lint:enable no-ids
 
 // invalid
 [aria-invalid='true'] {
-  @include wc-outline($color: $wc-clr-red);
+  @include wc-outline($color: $sample-clr-red);
 }
 
 // These are colour classes. Colour classes are _very_ dangerous. Therefore we
 // do not supply any which act on actual elements. These colours will,
 // therefore, only act on the pseudo element used to generate an icon. Extend
 // these as you feel fit.
-.wc-cerror::before {
-  color: $wc-clr-red;
+.wc-cerror {
+  &::before {
+    color: $sample-clr-red;
+  }
 }
 
-.wc-cwarning::before {
-  color: $wc-clr-orange;
+.wc-cwarning {
+  &::before {
+    color: $sample-clr-orange;
+  }
 }
 
-.wc-cinfo::before {
-  color: $wc-clr-dark-blue;
+.wc-cinfo {
+  &::before {
+    color: $sample-clr-dark-blue;
+  }
 }
 
-.wc-csuccess::before {
-  color: $wc-clr-green;
+.wc-csuccess {
+  &::before {
+    color: $sample-clr-green;
+  }
 }

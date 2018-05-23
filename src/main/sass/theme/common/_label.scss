@@ -4,8 +4,7 @@
 .wc-label,
 legend {
   > .fa-asterisk {
-    color: $wc-clr-violet;
-    font-size: .5em;
+    color: $sample-clr-violet;
     font-weight: normal;
     line-height: 1;
     vertical-align: top;
@@ -28,8 +27,7 @@ legend {
 // hint is additional text for labels that describe other information for the
 // related form element
 .wc-label-hint {
-  color: $wc-clr-violet;
-
+  color: $sample-clr-violet;
   font-size: 82.5%;
   font-weight: normal;
 }

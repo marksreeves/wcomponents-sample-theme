@@ -5,9 +5,11 @@
 // legend to show a mandatory field indicator. Why? To present a "key" if
 // required or to mark a table column header as containing fields which must
 // be completed. Not terribly good use-cases but use-cases non-the-less.
-.wc-text-type-mandatoryIndicator::after {
-  color: $wc-clr-violet;
-  font-size: .5em;
-  line-height: 1;
-  vertical-align: top;
+.wc-text-type-mandatoryIndicator {
+  &::after {
+    color: $sample-clr-violet;
+    font-size: .5em;
+    line-height: 1;
+    vertical-align: top;
+  }
 }

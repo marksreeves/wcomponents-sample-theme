@@ -1,20 +1,15 @@
 // listbox for combo and datefield
 [role='listbox'] {
-  @include border;
-  background-color: $wc-clr-light-grey;
-  color: $wc-clr-black;
+  background-color: $sample-clr-light-grey;
+  color: $sample-clr-black;
 }
 
 [role='combobox'] {
   // The whole combo is invalid but we only want to apply the background
   // color to the textbox.
-  &[aria-invalid='true'] > input {
-    background-color: $wc-clr-pink;
-  }
-
-  // We need the child selector here because of The W[Partial]DateField
-  // calendar.
-  > button {
-    border-left: 0;
+  &[aria-invalid='true'] {
+    > input {
+      background-color: $sample-clr-pink;
+    }
   }
 }

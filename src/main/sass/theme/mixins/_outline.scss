@@ -8,11 +8,11 @@
 // * style - solid;
 // * width - default border width;
 // * offset - .
-// @param {color} $color [$wc-clr-grey] The color of the outline.
+// @param {color} $color [$sample-clr-grey] The color of the outline.
 // @param {outline-style} $style [solid] The style of the outline.
 // @param {dimension} $width [$wc-border-width] the width of the outline.
 // @param {int} $offset [0] The outline offset (if any).
-@mixin wc-outline($color: $wc-clr-grey, $style: solid, $width: $wc-border-width, $offset: 0) {
+@mixin wc-outline($color: $sample-clr-grey, $style: solid, $width: $wc-border-width, $offset: 0) {
   outline: $width $style $color;
   @if $offset != 0 {
     outline-offset: $offset;

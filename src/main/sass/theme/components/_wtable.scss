@@ -4,46 +4,63 @@ table {
 
 // thead
 thead {
-  background-color: $wc-clr-dark-blue;
+  background-color: $sample-clr-dark-blue;
 
   &,
   .wc-nobutton,
   .wc-linkbutton,
   a,
+  // allow unnested pseudo element here for ease of maintenance
+  //sass-lint:disable force-pseudo-nesting
   a:visited {
-    color: $wc-clr-white;
+    color: $sample-clr-white;
   }
+  //sass-lint:enable force-pseudo-nesting
 
-  .wc-submenu .wc-menuitem {
-    color: $wc-clr-black;
+  .wc-submenu {
+    .wc-menuitem {
+      color: $sample-clr-black;
+    }
   }
 }
 
 [sorted] {
   // the TH needs to be opague to over-ride the thead background color
   // rather than over-lay it.
-  background-color: $wc-clr-light-grey;
+  background-color: $sample-clr-light-grey;
 
   &,
   .wc-nobutton,
   .wc-linkbutton,
   a,
+  // allow unnested pseudo element here for ease of maintenance
+  //sass-lint:disable force-pseudo-nesting
   a:visited {
-    color: $wc-clr-black;
+    color: $sample-clr-black;
+  }
+  //sass-lint:enable force-pseudo-nesting
+
+  .wc-linkbutton,
+  .wc-nobutton {
+    &[disabled] {
+      color: $sample-clr-dark-grey;
+    }
   }
 
-  .wc-linkbutton[disabled],
-  .wc-nobutton[disabled],
   [aria-disabled='true'] {
-    color: $wc-clr-dark-grey;
+    color: $sample-clr-dark-grey;
   }
 }
 
 // #############################################################################
 // Separators
 // #############################################################################
-.wc_table_rowsep > tr + tr {
-  @include border($pos: top);
+.wc_table_rowsep {
+  > tr {
+    + tr {
+      @include border($pos: top);
+    }
+  }
 }
 
 .wc_table_colsep {
@@ -63,7 +80,7 @@ thead {
 // #############################################################################
 // Sorted column
 .wc_table_sort_sorted {
-  background-color: $wc-clr-light-grey-rgba;
+  background-color: $sample-clr-light-grey-rgba;
 }
 
 // #############################################################################
@@ -73,7 +90,7 @@ thead {
 // Row striping: You'd think tr:nth-child(even) would be enough but that does
 // not account for sub rows.
 .wc_table_stripe {
-  background-color: $wc-clr-light-grey-rgba;
+  background-color: $sample-clr-light-grey-rgba;
 }
 
 // #############################################################################
@@ -81,15 +98,19 @@ thead {
 // #############################################################################
 // this only applies to rows with the invite class.
 // sass-lint:disable no-qualifying-elements
-tr.wc-invite {
-  &:hover,
-  &:focus {
-    background-color: $wc-clr-light-blue-rbga;
+tr {
+  &.wc-invite {
+    &:hover,
+    &:focus {
+      background-color: $sample-clr-light-blue-rbga;
+    }
   }
 }
 // sass-lint:enable no-qualifying-elements
 
 // the is the submenu opener emulator for the sub-row toggle control
-.wc_table_sel_wrapper .wc-submenu-o {
-  background-color: $wc-clr-light-grey;
+.wc_table_sel_wrapper {
+  .wc-submenu-o {
+    background-color: $sample-clr-light-grey;
+  }
 }

@@ -1,18 +1,22 @@
 [role='tab'] {
-  background-color: $wc-clr-light-grey;
-  border-color: $wc-clr-grey;
-  color: $wc-clr-black;
+  background-color: $sample-clr-light-grey;
+  border-color: $sample-clr-grey;
+  color: $sample-clr-black;
 
   &[aria-selected='true'],
   &[aria-expanded='true'] {
-    background-color: $wc-clr-white;
+    background-color: $sample-clr-white;
+  }
+
+  &[aria-disabled='true'] {
+    border-color: $sample-clr-grey;
   }
 }
 
 [role='tabpanel'] {
   @include border;
-  background-color: $wc-clr-white;
-  color: $wc-clr-black;
+  background-color: $sample-clr-white;
+  color: $sample-clr-black;
 
   [aria-multiselectable] > & {
     border-bottom: 0;

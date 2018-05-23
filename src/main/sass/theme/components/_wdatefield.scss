@@ -5,7 +5,7 @@
 // sass-lint:disable no-ids
 #wc_calbox {
   @include border;
-  background-color: $wc-clr-white;
+  background-color: $sample-clr-white;
 }
 
 // The calendar table
@@ -15,22 +15,24 @@
   }
 
   th {
-    background-color: $wc-clr-light-grey;
+    background-color: $sample-clr-light-grey;
   }
 }
 
-#wc_caldaybox td {
-  color: $wc-clr-disabled-fg;
+#wc_caldaybox {
+  td {
+    color: $wc-clr-disabled-fg;
+  }
 }
 // sass-lint:enable no-ids
 
 // date picker buttons
 .wc_wdf_pick {
-  color: $wc-clr-black;
+  color: $sample-clr-black;
 
   &[aria-pressed='true'] { // selected date
-    background-color: $wc-clr-dark-grey;
-    color: $wc-clr-light-grey;
+    background-color: $sample-clr-dark-grey;
+    color: $sample-clr-light-grey;
   }
 }
 

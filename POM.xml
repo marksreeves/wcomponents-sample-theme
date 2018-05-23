@@ -10,7 +10,7 @@
       Manually change this to the desired version of WComponents AND
       change it in wc.project.version below.
     -->
-    <version>1.5.1</version>
+    <version>1.5.5</version>
   </parent>
 
   <properties>
@@ -18,7 +18,7 @@
       Manually keep this in sync with the WComponents version we inherit
       from above.
     -->
-    <wc.project.version>1.5.1</wc.project.version>
+    <wc.project.version>1.5.5</wc.project.version>
     <theme.dir>${basedir}${file.separator}..</theme.dir>
     <theme.impl.dir>${theme.dir}</theme.impl.dir>
     <theme.core.dir>${theme.unpack.dir}${file.separator}${theme.default.name}</theme.core.dir>

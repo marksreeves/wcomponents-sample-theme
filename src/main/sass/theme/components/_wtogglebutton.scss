@@ -2,24 +2,24 @@
 .wc-togglebutton {
   &[data-wc-component],
   > button {
-    background-color: $wc-clr-light-grey;
+    background-color: $sample-clr-light-grey;
 
     &::after {
-      background-color: $wc-clr-light-grey;
+      background-color: $sample-clr-light-grey;
     }
   }
 
   &[data-wc-component] {
-    background-color: $wc-clr-white;
+    background-color: $sample-clr-white;
   }
 
   > button {
     &:focus {
-      background-color: $wc-clr-light-blue;
+      background-color: $sample-clr-light-blue;
     }
 
     &[aria-checked='true'] {
-      background-color: $wc-clr-dark-grey;
+      background-color: $sample-clr-dark-grey;
     }
 
     &[disabled] {

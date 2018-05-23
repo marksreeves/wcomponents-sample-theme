@@ -2,23 +2,24 @@ dialog {
   background: transparent;
 
   > div { // dialog content container
-    background-color: $wc-clr-white;
-    border-color: $wc-clr-grey;
+    background-color: $sample-clr-white;
+    border-color: $sample-clr-grey;
   }
 
   > header,
   > footer { // top and bottom bars of dialog
-    background-color: $wc-clr-dark-blue;
-    color: $wc-clr-white;
+    background-color: $sample-clr-dark-blue;
+    color: $sample-clr-white;
   }
 
   > header {
     > h1 { // the title
-      color: $wc-clr-white;
+      color: $sample-clr-white;
+      font-size: 1rem;
     }
 
     button {
-      @include border($color: $wc-clr-white);
+      @include border($color: $sample-clr-white);
     }
   }
 }

@@ -1,13 +1,13 @@
 
 // Provides the styling for the accesskey indicator.
 [role='tooltip'] {
-  @include border($color: $wc-clr-light-grey);
-  background-color: $wc-clr-light-grey;
-  color: $wc-clr-black;
+  @include border($color: $sample-clr-light-grey);
+  background-color: $sample-clr-light-grey;
+  color: $sample-clr-black;
   font-weight: bold;
 
   &::before,
   &::after {
-    border-color: $wc-clr-light-grey transparent transparent;
+    border-color: $sample-clr-light-grey transparent transparent;
   }
 }
