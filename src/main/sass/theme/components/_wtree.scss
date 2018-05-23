@@ -1,28 +1,28 @@
 [role='tree'] {
   [aria-selected='true'] {
-    background-color: $wc-clr-dark-grey;
-    color: $wc-clr-light-grey;
+    background-color: $sample-clr-dark-grey;
+    color: $sample-clr-light-grey;
   }
 
   &,
   [role='group'] {
-    background-color: $wc-clr-white;
-    color: $wc-clr-black;
+    background-color: $sample-clr-white;
+    color: $sample-clr-black;
   }
-}
 
-[role='tree'].wc_htree {
-  [role='group'] {
-    border-left-color: $wc-clr-grey;
-    border-left-width: 3px;
+  &.wc_htree {
+    [role='group'] {
+      border-left-color: $sample-clr-grey;
+      border-left-width: 3px;
 
-    &.wc_tree_root {
-      border-left-width: 0;
+      &.wc_tree_root {
+        border-left-width: 0;
+      }
     }
   }
 }
 
 .wc_branch_resize_handle {
-  background-color: $wc-clr-light-grey;
-  color: $wc-clr-black;
+  background-color: $sample-clr-light-grey;
+  color: $sample-clr-black;
 }

@@ -1,0 +1,11 @@
+figure,
+figcaption {
+  text-align: center;
+}
+
+figcaption {
+  display: block;
+  margin: $wc-gap-small auto 0;
+  max-width: 90%;
+  width: auto;
+}

@@ -2,9 +2,11 @@
 // WPanel type CHROME
 // See wc.section.color
 // #############################################################################
-.wc-panel-type-chrome > h1 {
-  background-color: $wc-clr-dark-blue;
-  color: $wc-clr-white;
+.wc-panel-type-chrome {
+  > h1 {
+    background-color: $sample-clr-dark-blue;
+    color: $sample-clr-white;
+  }
 }
 
 // #############################################################################
@@ -12,12 +14,12 @@
 // #############################################################################
 // See wc.section.color
 .wc-panel-type-action {
-  background-color: $wc-clr-white;
-  border-color: $wc-clr-violet;
+  background-color: $sample-clr-white;
+  border-color: $sample-clr-violet;
 
   > h1 {
-    background-color: $wc-clr-violet;
-    color: $wc-clr-white;
+    background-color: $sample-clr-violet;
+    color: $sample-clr-white;
   }
 }
 
@@ -28,9 +30,9 @@
 
 
 .wc-panel-type-feature {
-  background-color: $wc-clr-light-grey;
-  border-color: $wc-clr-grey;
-  color: $wc-clr-dark-blue;
+  background-color: $sample-clr-light-grey;
+  border-color: $sample-clr-grey;
+  color: $sample-clr-dark-blue;
   padding: $wc-gap-normal;
 }
 
@@ -38,8 +40,8 @@
 // Type FOOTER
 // #############################################################################
 footer {
-  background-color: $wc-clr-light-grey;
-  color: $wc-clr-dark-blue;
+  background-color: $sample-clr-light-grey;
+  color: $sample-clr-dark-blue;
   padding: $wc-gap-normal;
 }
 
@@ -48,7 +50,7 @@ footer {
 // Type HEADER
 // #############################################################################
 [role='banner'] {
-  background-color: $wc-clr-dark-blue;
+  background-color: $sample-clr-dark-blue;
   padding: $wc-gap-normal;
 
   // Set the foreground colour of components which have their own defined
@@ -57,8 +59,10 @@ footer {
   h1,
   .wc-linkbutton,
   a,
+  // allow unnested pseudo element here for ease of maintenance
+  //sass-lint:disable force-pseudo-nesting
   a:visited {
-    color: $wc-clr-white;
+    color: $sample-clr-white;
   }
 }
 
@@ -67,6 +71,6 @@ footer {
 // ListLayout
 // #############################################################################
 .wc-listlayout-type-striped > :nth-child(even) {
-  background-color: $wc-clr-light-grey;
-  color: $wc-clr-black;
+  background-color: $sample-clr-light-grey;
+  color: $sample-clr-black;
 }

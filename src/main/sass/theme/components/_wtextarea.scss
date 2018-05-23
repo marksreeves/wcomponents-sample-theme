@@ -1,7 +1,7 @@
 // the ticker
 textarea + output {
-  @include border($color: $wc-clr-grey);
+  @include border($color: $sample-clr-grey);
   @include border($pos: top, $width: 0);
-  background-color: $wc-clr-light-grey;
-  color: $wc-clr-dark-grey;
+  background-color: $sample-clr-light-grey;
+  color: $sample-clr-dark-grey;
 }

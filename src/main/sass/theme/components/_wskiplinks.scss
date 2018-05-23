@@ -1,4 +1,8 @@
-.wc-skiplinks a:focus {
-  background-color: $wc-clr-white;
-  color: $wc-clr-black;
+.wc-skiplinks {
+  a {
+    &:focus {
+      background-color: $sample-clr-white;
+      color: $sample-clr-black;
+    }
+  }
 }

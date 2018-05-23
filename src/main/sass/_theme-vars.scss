@@ -1,0 +1,23 @@
+
+$sample-clr-white: #fff;
+$sample-clr-black: #000;
+
+$sample-clr-light-grey: #fafafa;
+$sample-clr-grey: #ccc;
+$sample-clr-dark-grey: #696969;
+$sample-clr-light-grey-rgba: rgba(0, 0, 0, .02);
+$sample-clr-grey-rgba: rgba(0, 0, 0, .25);
+$sample-clr-dark-grey-rgba: rgba(0, 0, 0, .9);
+
+$sample-clr-red: #af0000;
+$sample-clr-pink: #ffdfdf;
+$sample-clr-orange: #cf4000;
+$sample-clr-green: #060;
+$sample-clr-dark-blue: #45699f;
+$sample-clr-light-blue: #bbd6ff;
+$sample-clr-light-blue-rbga: rgba(204, 229, 255, .5);
+
+$sample-clr-violet: #880ce8;
+
+// Override disabled background (as an example of a colour override)
+$wc-clr-disabled-bg: $sample-clr-light-grey;

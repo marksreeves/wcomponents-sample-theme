@@ -1,10 +1,14 @@
-.wc-multifileupload.wc_dragging [type='file'] {
-  @include wc-outline($color: $wc-clr-black, $style: dotted, $width: 2px);
-  background-color: $wc-clr-light-blue;
+.wc-multifileupload {
+  &.wc_dragging {
+    [type='file'] {
+      @include wc-outline($color: $sample-clr-black, $style: dotted, $width: 2px);
+      background-color: $sample-clr-light-blue;
+    }
+  }
 }
 
 .wc-file {
-  background-color: $wc-clr-light-grey;
+  background-color: $sample-clr-light-grey;
 }
 
 // sass-lint:disable no-vendor-prefixes
@@ -14,6 +18,8 @@
   // pseudo-element ::-ms-browse on its own has detrimental effects on all
   // buttons if it is not explicitly nested in a [type='file'] so leave
   // these nested selectors.
+  // NOTE: this is not in a dynamically loaded browser-specific "fix"
+  // because IE is a bit temperamental about its file upload artefacts.
   &::-ms-browse {
     border: 0;
   }

@@ -19,19 +19,21 @@
 
 // aria-busy areas
 [aria-busy='true'] {
-  color: $wc-clr-grey-rgba;
+  color: $sample-clr-grey-rgba;
 
   > * {
     @include wc-busy-fade;
   }
 
   &::before { // yeah - I know this won't work for replaced content...
-    color: $wc-clr-dark-grey;
+    color: $sample-clr-dark-grey;
   }
 }
 
 // sass-lint:disable no-qualifying-elements
-img[aria-busy='true'] {
-  @include wc-busy-fade;
+img {
+  &[aria-busy='true'] {
+    @include wc-busy-fade;
+  }
 }
 // sass-lint:enable no-qualifying-elements

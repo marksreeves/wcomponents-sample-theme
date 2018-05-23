@@ -1,24 +1,27 @@
+// sass-lint:disable nesting-depth
+.wc-table {
+  &.wc-respond {
+    tr {
+      &[aria-selected='true'] {
+        // allow unnested pseudo element here for ease of maintenance
+        //sass-lint:disable force-pseudo-nesting
+        &,
+        &.wc-invite:hover,
+        &.wc-invite:focus {
+          background-color: $sample-clr-dark-grey;
+        }
 
-.wc-table.wc-respond {
-  // sass-lint:disable no-qualifying-elements
-  tr[aria-selected='true'] {
-    &,
-    &.wc-invite:hover,
-    &.wc-invite:focus {
-      background-color: $wc-clr-dark-grey;
-    }
-
-    > th,
-    > td {
-      // WARNING: you _may_ want to add overrides for coloured
-      // elements eg, headings.
-      &,
-      a,
-      a:visited,
-      .wc-linkbutton {
-        color: $wc-clr-light-grey;
+        > th,
+        > td {
+          &,
+          a,
+          a:visited,
+          .wc-linkbutton {
+            color: $sample-clr-light-grey;
+          }
+        }
+        //sass-lint:enable force-pseudo-nesting
       }
     }
   }
-  // sass-lint:enable no-qualifying-elements
 }

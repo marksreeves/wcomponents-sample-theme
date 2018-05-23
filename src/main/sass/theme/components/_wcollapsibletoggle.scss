@@ -1,4 +1,6 @@
 
-.wc_collapsibletoggle[aria-checked='true'] {
-  font-weight: bold;
+.wc_collapsibletoggle {
+  &[aria-checked='true'] {
+    font-weight: bold;
+  }
 }
