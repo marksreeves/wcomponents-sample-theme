@@ -3,6 +3,7 @@ $sample-clr-white: #fff;
 $sample-clr-black: #000;
 
 $sample-clr-light-grey: #fafafa;
+$sample-clr-lighter-grey: #e0e0e0;
 $sample-clr-grey: #ccc;
 $sample-clr-dark-grey: #696969;
 $sample-clr-light-grey-rgba: rgba(0, 0, 0, .02);
@@ -19,8 +20,9 @@ $sample-clr-light-blue-rbga: rgba(204, 229, 255, .5);
 
 $sample-clr-violet: #880ce8;
 
-// Override disabled background (as an example of a colour override)
+// Override disabled background/border (as an example of a colour override)
 $wc-clr-disabled-bg: $sample-clr-light-grey;
+$wc-clr-disabled-border: $sample-clr-lighter-grey;
 
 // now some core vars to be overridden
 // #############################################################################

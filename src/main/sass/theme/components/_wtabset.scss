@@ -7,6 +7,10 @@
   &[aria-expanded='true'] {
     background-color: $sample-clr-white;
   }
+
+  &[aria-disabled='true'] {
+    border-color: $sample-clr-grey;
+  }
 }
 
 [role='tabpanel'] {
