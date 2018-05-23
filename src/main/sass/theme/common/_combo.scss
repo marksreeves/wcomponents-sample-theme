@@ -1,6 +1,5 @@
 // listbox for combo and datefield
 [role='listbox'] {
-  @include border;
   background-color: $sample-clr-light-grey;
   color: $sample-clr-black;
 }
@@ -12,11 +11,5 @@
     > input {
       background-color: $sample-clr-pink;
     }
-  }
-
-  // We need the child selector here because of The W[Partial]DateField
-  // calendar.
-  > button {
-    border-left: 0;
   }
 }

@@ -51,7 +51,6 @@ footer {
 // #############################################################################
 [role='banner'] {
   background-color: $sample-clr-dark-blue;
-  padding: $wc-gap-normal;
 
   // Set the foreground colour of components which have their own defined
   // colour so will not inherit from the container.
@@ -63,6 +62,12 @@ footer {
   //sass-lint:disable force-pseudo-nesting
   a:visited {
     color: $sample-clr-white;
+  }
+
+  h1,
+  h2 {
+    margin: 0;
+    padding: $wc-gap-large;
   }
 }
 

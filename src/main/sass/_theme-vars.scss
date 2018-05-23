@@ -21,3 +21,18 @@ $sample-clr-violet: #880ce8;
 
 // Override disabled background (as an example of a colour override)
 $wc-clr-disabled-bg: $sample-clr-light-grey;
+
+// now some core vars to be overridden
+// #############################################################################
+// Section elements and their headers
+// #############################################################################
+// the space between the section box and its content. This is reversed to "dock"
+// a menu. Must be > 0 to have any effect.
+$wc-section-space-normal: .5rem;
+$wc-section-space-reduced: .25rem;
+
+// #############################################################################
+// VERTICAL ALIGNMENT OPTIONS
+// #############################################################################
+// the only valign settings in WComponents. 1.5.5
+$wc-valign-list: baseline, bottom, middle, top;
