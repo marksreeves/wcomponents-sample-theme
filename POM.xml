@@ -10,7 +10,7 @@
       Manually change this to the desired version of WComponents AND
       change it in wc.project.version below.
     -->
-    <version>1.5.5</version>
+    <version>1.5.11</version>
   </parent>
 
   <properties>
@@ -18,9 +18,9 @@
       Manually keep this in sync with the WComponents version we inherit
       from above.
     -->
-    <wc.project.version>1.5.5</wc.project.version>
+    <wc.project.version>1.5.11</wc.project.version>
     <theme.dir>${basedir}${file.separator}..</theme.dir>
-    <theme.impl.dir>${theme.dir}</theme.impl.dir>
+    <theme.impl.dir>${basedir}</theme.impl.dir>
     <theme.core.dir>${theme.unpack.dir}${file.separator}${theme.default.name}</theme.core.dir>
     <theme.impl.name>${project.artifactId}</theme.impl.name>
     <theme.skip.antrun>false</theme.skip.antrun>
@@ -28,7 +28,7 @@
   </properties>
 
   <version>1.0.0-SNAPSHOT</version>
-  <groupId>wcomponent</groupId>
+  <groupId>com.github.bordertech</groupId>
   <artifactId>wcomponents-sample-theme</artifactId>
   <packaging>pom</packaging>
 </project>
