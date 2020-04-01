@@ -1,34 +1,158 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>com.github.bordertech.wcomponents</groupId>
-    <artifactId>wcomponents-theme-parent</artifactId>
-    <!--
-      Manually change this to the desired version of WComponents AND
-      change it in wc.project.version below.
-    -->
-    <version>1.5.11</version>
-  </parent>
+	<version>2.0.0-SNAPSHOT</version>
+	<groupId>com.github.bordertech</groupId>
+	<artifactId>wcomponents-sample-theme</artifactId>
+	<packaging>jar</packaging>
 
-  <properties>
-    <!--
-      Manually keep this in sync with the WComponents version we inherit
-      from above.
-    -->
-    <wc.project.version>1.5.11</wc.project.version>
-    <theme.dir>${basedir}${file.separator}..</theme.dir>
-    <theme.impl.dir>${basedir}</theme.impl.dir>
-    <theme.core.dir>${theme.unpack.dir}${file.separator}${theme.default.name}</theme.core.dir>
-    <theme.impl.name>${project.artifactId}</theme.impl.name>
-    <theme.skip.antrun>false</theme.skip.antrun>
-    <theme.skip.unpack>false</theme.skip.unpack>
-  </properties>
+	<properties>
+		<theme.skip.antrun>false</theme.skip.antrun>
+		<theme.skip.unpack>false</theme.skip.unpack>
+		<theme.unpack.dir>${project.build.directory}</theme.unpack.dir>
+		<i18n.unpack.dir>${project.build.directory}${file.separator}wcomponents-i18n</i18n.unpack.dir>
+		<node.download.root>http://nodejs.org/dist/</node.download.root>
+		<yarn.download.root>https://github.com/yarnpkg/yarn/releases/download/</yarn.download.root>
+		<nodejs.version>v10.16.3</nodejs.version><!-- the version of node to be installed -->
+		<yarn.version>v1.19.0</yarn.version>
+		<!--
+			CHANGE THE wc.project.version PROPERTY BELOW TO DETERMINE WHICH VERSION OF WCOMPONENTS THE THEME INHERITS.
+		-->
+		<wc.project.version>1.5.18</wc.project.version>
+	</properties>
+	
 
-  <version>1.0.0-SNAPSHOT</version>
-  <groupId>com.github.bordertech</groupId>
-  <artifactId>wcomponents-sample-theme</artifactId>
-  <packaging>pom</packaging>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.10</version>
+				<executions>
+					<execution>
+						<!-- This execution downloads and unpacks the core wcomponents theme. -->
+						<id>unpack-core</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<skip>${theme.skip.unpack}</skip>
+							<outputDirectory>${theme.unpack.dir}</outputDirectory>
+							<includes>wcomponents-theme/**</includes>
+							<excludes>wcomponents-theme/yarn.lock</excludes>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.bordertech.wcomponents</groupId>
+									<artifactId>wcomponents-theme</artifactId>
+									<version>${wc.project.version}</version>
+									<classifier>sources</classifier>
+									<overWrite>true</overWrite>
+									<type>zip</type>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+					<execution>
+						<!-- This execution downloads and unpacks the core wcomponents i18n module which is needed for a theme build -->
+						<id>unpack-i18n</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<skip>${theme.skip.unpack}</skip>
+							<outputDirectory>${i18n.unpack.dir}</outputDirectory>
+							<artifactItems>
+								<artifactItem>
+									<groupId>com.github.bordertech.wcomponents</groupId>
+									<artifactId>wcomponents-i18n</artifactId>
+									<version>${wc.project.version}</version>
+									<overWrite>true</overWrite>
+									<type>jar</type>
+								</artifactItem>
+							</artifactItems>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>com.github.eirslett</groupId>
+				<artifactId>frontend-maven-plugin</artifactId>
+				<version>1.9.1</version>
+				<configuration>
+					<workingDirectory>${basedir}</workingDirectory>
+				</configuration>
+				<executions>
+					<execution>
+						<id>install node and yarn</id>
+						<!-- 
+							Set up node and yarn for the implementation build scripts.
+							These perform the theme directory and package.json merges.
+							Node does this better than Ant, for example manipulating JSON files is native to Node.
+						-->
+						<goals>
+							<goal>install-node-and-yarn</goal>
+						</goals>
+						<phase>initialize</phase>
+						<configuration>
+							<skip>${theme.skip.antrun}</skip>
+							<nodeVersion>${nodejs.version}</nodeVersion>
+							<yarnVersion>${yarn.version}</yarnVersion>
+							<nodeDownloadRoot>${node.download.root}</nodeDownloadRoot>
+							<yarnDownloadRoot>${yarn.download.root}</yarnDownloadRoot>
+						</configuration>
+					</execution>
+					<execution>
+						<id>yarn install</id>
+						<goals>
+							<goal>yarn</goal>
+						</goals>
+						<phase>initialize</phase>
+						<configuration>
+							<skip>${theme.skip.antrun}</skip>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>yarn run build</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>yarn</goal>
+						</goals>
+						<configuration>
+							<skip>${theme.skip.antrun}</skip>
+							<arguments>run build</arguments>
+						</configuration>
+					</execution>
+<!--					<execution>
+						<id>yarn run nested install</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>yarn</goal>
+						</goals>
+						<configuration>
+							<skip>${theme.skip.antrun}</skip>
+							<workingDirectory>${project.build.directory}${file.separator}merged</workingDirectory>
+							<arguments>install</arguments>
+						</configuration>
+					</execution>-->
+					<execution>
+						<id>yarn run nested build</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>yarn</goal>
+						</goals>
+						<configuration>
+							<skip>${theme.skip.antrun}</skip>
+							<workingDirectory>${project.build.directory}${file.separator}merged</workingDirectory>
+							<arguments>run build</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
 </project>

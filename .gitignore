@@ -1,6 +1,7 @@
 ### WComponents ###
 node/
-package.json
+package.json.lock
+yarn.lock
 jsdoc.json
 .npmrc
 *.dat

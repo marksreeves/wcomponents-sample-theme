@@ -1,0 +1,26 @@
+{
+	"name": "wcomponents-sample-theme",
+	"version": "2.0.0-SNAPSHOT",
+	"description": "Client side code for WComponent UI tool kit.",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BorderTech/wcomponents-sample-theme.git"
+	},
+	"scripts": {
+		"build": "node index.js",
+		"test": "node node_modules/.bin/intern",
+		"deploy": "node mvn-deploy.js"
+	},
+	"directories": {
+		"src": "src",
+		"target": "target"
+	},
+	"devDependencies": {
+		"deepmerge": "4.0.0",
+		"fs-extra": "8.1.0",
+		"intern": "4.4.3",
+		"maven-deploy": "1.5.0",
+		"merge-trees": "2.0.0"
+	}
+}
