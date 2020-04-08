@@ -1,7 +1,18 @@
+
+$wc-tabset-border-radius: 0 !default;
+
 [role='tab'] {
   background-color: $sample-clr-light-grey;
   border-color: $sample-clr-grey;
   color: $sample-clr-black;
+
+    
+  @if $wc-tabset-border-radius > 0 {	  
+    &[aria-selected] { // not aria-expanded which applies to accordions
+      border-top-left-radius: $wc-tabset-border-radius;
+      border-top-right-radius: $wc-tabset-border-radius;
+    }
+  }
 
   &[aria-selected='true'],
   &[aria-expanded='true'] {
@@ -21,5 +32,31 @@
   [aria-multiselectable] > & {
     border-bottom: 0;
     border-top: 0;
+  }
+}
+
+@if $wc-tabset-allow-left-right == true {
+  // LEFT or RIGHT
+  .wc-tabset-type-left {
+    > [role='tablist'] {
+      [role='tab'] {
+        @if $wc-tabset-border-radius > 0 {
+          border-bottom-left-radius: $wc-tabset-border-radius;
+          border-top-right-radius: 0;
+        }
+      }
+    }
+  }
+
+  .wc-tabset-type-right {
+    > [role='tablist'] {
+      [role='tab'] {
+		@if $wc-tabset-border-radius > 0 {
+		  // right inherits top
+		  border-bottom-right-radius: $wc-tabset-border-radius;
+		  border-top-left-radius: 0;
+		}
+      }
+    }
   }
 }
